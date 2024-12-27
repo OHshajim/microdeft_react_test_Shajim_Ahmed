@@ -38,9 +38,20 @@ const Card = () => {
       {data.length === 0 && <p id="noData">No Data is available !!!</p>}
       <div>
         <div className="courses-container">
-          {data.map((course) => (
-            <CourseCard course={course} key={course.id} />
-          ))}
+          {data.map(
+            (course: {
+              id: number;
+              title: string;
+              image: string;
+              description: string;
+              instructor_name: string;
+              created_at: string;
+              badge_color: string;
+              badge_text: string;
+            }) => (
+              <CourseCard course={course} key={course.id} />
+            )
+          )}
         </div>
       </div>
     </div>

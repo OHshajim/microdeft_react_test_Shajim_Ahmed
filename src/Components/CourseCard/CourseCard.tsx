@@ -2,7 +2,19 @@ import React from "react";
 import "./style.css";
 import Image from "next/image";
 
-const CourseCard = ({ course }) => {
+const CourseCard = ({
+  course,
+}: {
+  course: {
+    title: string;
+    image: string;
+    description: string;
+    instructor_name: string;
+    created_at: string;
+    badge_color: string;
+    badge_text: string;
+  };
+}) => {
   return (
     <div className="course-card">
       <Image
