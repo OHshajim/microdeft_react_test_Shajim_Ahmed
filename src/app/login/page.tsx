@@ -22,7 +22,6 @@ const Page = () => {
       data
     );
     if (response.data.status) {
-      // console.log(response);
       SaveToken(response.data.data.token);
       route.push("/");
     }
