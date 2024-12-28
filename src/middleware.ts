@@ -4,7 +4,7 @@ export const middleware = async (request: NextRequest) => {
   const token = request.cookies.get("authToken");
 
   if (!token) {
-    return NextResponse.redirect(new URL(`/login`, request.url));
+    return NextResponse.redirect(new URL("/login", request.url));
   }
   return NextResponse.next();
 };

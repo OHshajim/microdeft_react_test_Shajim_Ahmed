@@ -1,6 +1,6 @@
 import Card from "@/Components/Card";
 
-export default async function Home() {
+export default function Home() {
   return (
     <div>
       <Card />

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useForm, SubmitHandler } from "react-hook-form";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { SaveToken } from "@/Token/SaveToken";
 type Inputs = {
   email: string;
@@ -22,8 +22,10 @@ const Page = () => {
       data
     );
     if (response.data.status) {
+      console.log(response);
       SaveToken(response.data.data.token);
-      route.push("/");
+      redirect("/");
+      return route.push("/");
     }
   };
   return (
